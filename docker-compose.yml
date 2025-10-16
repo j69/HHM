@@ -1,0 +1,15 @@
+services:
+  web:
+    build: .
+    volumes:
+      - .:/app
+      - media:/app/media
+      - static:/app/staticfiles
+      - dbdata:/app/db
+    ports:
+      - "8000:8000"
+
+volumes:
+  media:
+  static:
+  dbdata:
