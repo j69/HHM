@@ -19,6 +19,23 @@ There is 4 domain objects: Users, Organizations, Files and Downloads.
 Each user and uploaded file belongs to an organization
 Users can log in and log out (via session authentication)
 
+# Classic Python Venv installation if needed
+python3 -m venv .venv
+source .venv/bin/activate
+pip instal
+
+## start Django's development server
+python manage.py runserver
+python manage.py makemigrations
+python manage.py migrate
+
+## Test the API Run the development server:
+python manage.py runserver
+## http://127.0.0.1:8000/api/items/
+
+python manage.py createsuperuser
+# admin/salasana
+
 
 ## Running with Docker
 
@@ -38,21 +55,19 @@ python manage.py createsuperuser
 # admin/salasana or you can log as admin2/admin2
 # you can check and modify users at http://localhost:8000/admin/
 
-python manage.py create_org_user --org "Aurinko OY" --username antti --password salasana1
-python manage.py create_org_user --org "Aurinko OY" --username basti --password salasana2
-
-python manage.py create_org_user --org "Lepakkomies OY" --username arvu --password salasana3
-python manage.py create_org_user --org "Lepakkomies OY" --username hullu --password salasana4
-python manage.py create_org_user --org "Lepakkomies OY" --username pekka --password salasana5
-
+python manage.py create_org_user --org "Soul Goodman" --username jimmy --password salasana1
+python manage.py create_org_user --org "Davis & Miles" --username cliff --password salasana2
+python manage.py create_org_user --org "Mesa Verde" --username kevin --password salasana3
+python manage.py create_org_user --org "Schweikart & Cokely" --username richard --password salasana4
+python manage.py create_org_user --org "Hamlin & McGill" --username howard --password salasana5
 ```
 
 ## How to test the application:
 * Create user in http://localhost:8000/admin/ or you can use above list
-* Login at http://localhost:8000/api/ as <b>"antti/salasana1"</b> or else from list above
+* Login at http://localhost:8000/api/ as <b>"jimmy/salasana1"</b> or else from list above
 * Go to /api/files/ and upload some file. File will be uploaded to your organization
 * Go to /api/files/{id}/download/ and download a file. It will creates a Download record
 * Go to /api/organizations/ and see total download counts by Organization
 * Go to /api/downloads/by-user/{user_id}/ and see how much downloads by user
 * Go to /api/downloads/by-file/{file_id}/ and see how much downloads for a file
-* Login as "pekka/salasana5" or someone else and try again
+* Login as "howard/salasana5" or someone else and try again
