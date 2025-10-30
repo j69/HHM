@@ -1,6 +1,8 @@
+![JMM](/media/uploads/jmm.jpg "jMM")
+
 # Django File Upload/Download API
 
-A Django + DRF (Django REST Framework) web application for registered users from various organizations that allows them to upload and download files.
+Classic Django + DRF (Django REST Framework) web application for registered users from various organizations that allows them to upload and download files.
 
 Each user and file belongs to an organization. All downloads are tracked.
 
